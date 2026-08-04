@@ -1,0 +1,5 @@
+# Synthetic Validation
+
+The fixed-seed synthetic benchmark generates latent public preference shares, expert shares, percentage-aggregation outcomes, and coarse observed eliminations. It then hides the synthetic truth from the inference stage and evaluates whether the rule-aware feasible set covers that truth. Under rule-consistent simulated outcomes, the rule-aware feasible-set coverage rate is 1.000; this is a logical-calibration result under the stated simulator. Under the intentional outcome-noise stress condition, coverage is 0.948, illustrating that incompatible or misspecified coarse outcomes can invalidate the assumed constraints.
+
+The benchmark compares rule-aware partial identification with a simplex-only rule-agnostic set, naive judge-share point selection, a prediction-only proxy, and a full-disclosure oracle available only in simulation. It reports coverage, feasible-set width, false-certainty rate, baseline error, and outcome consistency. It does not claim that the empirical hidden preferences are recovered exactly.

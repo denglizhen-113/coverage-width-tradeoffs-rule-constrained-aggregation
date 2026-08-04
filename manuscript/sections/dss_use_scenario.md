@@ -1,0 +1,9 @@
+# Decision-Maker Use Scenario
+
+An institutional organizer oversees a recurring expert-crowd selection process. The organizer observes expert scores and final eliminations, but the public-preference signal is released only coarsely. A discretionary save can preserve a candidate despite a weak combined standing. The organizer must decide whether to retain the current aggregation rule, disclose more preference information, or tighten the judge-save protocol.
+
+First, the organizer enters the documented active set, outcomes, expert inputs, aggregation rule, intervention assumption, tie protocol, disclosure regime, and objective. The cockpit does not convert this record into a claimed public vote. It produces a compatible-state width and marks whether the conclusion is broad, moderate, or narrow only under the selected rule. If the judge-save condition is modeled as weak bottom-set membership, the report distinguishes this from a direct-elimination reading and makes the extra ambiguity visible.
+
+Second, the organizer compares rule and disclosure scenarios. A broad compatible set paired with a transparency objective leads to a conditional recommendation for the least intrusive additional public-rank or pairwise disclosure. A flexibility objective leads instead to an intervention record with eligibility and rationale. The rule-robustness label identifies whether the relevant predeclared conclusion survives the available configuration checks; it does not declare an institutional optimum.
+
+Third, the organizer documents the selected disclosure policy and any rule adjustment with the cockpit configuration and report. The system supports a traceable design decision about information release and rule clarity. Objective setting, privacy and legal assessment, stakeholder consultation, implementation authority, and monitoring of real organizational consequences remain outside the system.

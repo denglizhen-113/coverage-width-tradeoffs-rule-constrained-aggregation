@@ -1,0 +1,16 @@
+parameter_region,synthesizer,paired_cells_structural,width_lower_count,width_lower_proportion,majority_reversal_structural,paired_cells_bayesian,aware_pareto_count,aware_pareto_proportion,bayesian_pareto_count,bayesian_pareto_proportion,majority_reversal_bayesian
+"external candidates=6, rounds=3",external_ordinal,20,20,1.0,False,20.0,0.0,0.0,0.0,0.0,False
+"external candidates=7, rounds=3",external_ordinal,20,20,1.0,False,20.0,0.0,0.0,14.0,0.7,True
+"external candidates=7, rounds=4",external_ordinal,20,20,1.0,False,20.0,0.0,0.0,0.0,0.0,False
+"internal n=4, noise=0.00",internal_percentage,20,20,1.0,False,20.0,0.0,0.0,0.0,0.0,False
+"internal n=4, noise=0.05",internal_percentage,20,20,1.0,False,,,,,,
+"internal n=4, noise=0.10",internal_percentage,20,20,1.0,False,,,,,,
+"internal n=4, noise=0.20",internal_percentage,20,20,1.0,False,,,,,,
+"internal n=5, noise=0.00",internal_percentage,20,20,1.0,False,20.0,0.0,0.0,0.0,0.0,False
+"internal n=5, noise=0.05",internal_percentage,20,20,1.0,False,,,,,,
+"internal n=5, noise=0.10",internal_percentage,20,20,1.0,False,,,,,,
+"internal n=5, noise=0.20",internal_percentage,20,20,1.0,False,,,,,,
+"internal n=6, noise=0.00",internal_percentage,20,20,1.0,False,20.0,0.0,0.0,0.0,0.0,False
+"internal n=6, noise=0.05",internal_percentage,20,20,1.0,False,,,,,,
+"internal n=6, noise=0.10",internal_percentage,20,20,1.0,False,,,,,,
+"internal n=6, noise=0.20",internal_percentage,20,20,1.0,False,,,,,,

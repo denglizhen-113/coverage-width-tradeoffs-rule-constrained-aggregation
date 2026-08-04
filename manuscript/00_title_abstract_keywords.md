@@ -1,0 +1,9 @@
+# Hidden Preference Learning from Elimination-Only Outcomes in Expert-Crowd Decision Systems: Partial Identification, Mechanism Comparison, and Robust Aggregation
+
+## Abstract
+
+Expert-crowd decision systems often combine observable expert assessments with unobserved public preferences, while releasing only coarse outcomes such as eliminations. This information structure makes point estimation of public support untenable: the appropriate estimand is a feasible preference set conditional on the aggregation rule. We develop a rule-aware framework for partial identification from longitudinal elimination outcomes. Under percentage aggregation, observed eliminations impose linear inequalities on a simplex and yield convex feasible regions with coordinate-wise linear-program bounds. Under ranking aggregation, the same observations identify feasible ordinal rankings rather than cardinal support shares. A judge-save intervention further weakens identification by replacing direct elimination with a tie-inclusive bottom-set condition. We apply the framework to a longitudinal competition dataset spanning three rule regimes. Feasible sets are wide in all regimes, and direct feasible ranking sets are nested within their judge-save counterparts in every comparable week. We also construct typed dynamic proxies, use lagged prediction as a validation exercise, and propagate feasible-set uncertainty through scenario analyses. These extensions do not observe or infer an exact public ballot. The contribution is a transparent account of what coarse outcomes can identify, how institutional rules change that information, and how uncertainty can enter mechanism design.
+
+## Keywords
+
+partial identification; expert-crowd decision systems; hidden preferences; aggregation mechanisms; ranking aggregation; robust decision design; uncertainty-aware aggregation

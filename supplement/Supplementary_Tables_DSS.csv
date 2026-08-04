@@ -1,0 +1,8 @@
+supplement_table_id,file,content,generation_stage
+S1,model_invariant_checks.csv,formal and numerical invariants,Stage 23
+S2,assumption_inventory.csv,conditional model assumptions,Stage 23
+S3,baseline_definition_table.csv,baseline information sets and limits,Stage 23
+S4,robustness_sensitivity.csv,extended sensitivity material,Stage 21
+S5,ranking_tie_policy_sensitivity.csv,tie-policy sensitivity,Stage 05
+S6,ranking_sampling_diagnostics.csv,ranking enumeration/sampling diagnostics,Stage 05
+S7,scenario_based_evaluation.csv,future validation protocol,Stage 22

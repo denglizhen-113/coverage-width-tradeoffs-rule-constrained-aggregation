@@ -1,0 +1,5 @@
+# Evidence Scope Statement
+
+The manuscript uses an explicit evidence hierarchy. Formal propositions establish properties of the stated constraint systems. Synthetic benchmarks calibrate those systems only when latent preferences are known inside the simulator. The external synthetic testbed examines structural portability under a different institutional design. The longitudinal empirical application reports identified feasible sets consistent with observed outcomes and conditioned on documented rule assumptions; it does not recover hidden public preferences. The DSS cockpit receives artifact-level evaluation, while the scenario-based user evaluation is a future protocol only.
+
+Accordingly, the manuscript uses the terms *identified feasible set*, *consistent with observed outcomes*, *conditioned on rule assumptions*, *synthetic calibration*, *artifact-level evaluation*, and *scenario-based validation protocol*. It does not state that public preferences are revealed, recovered, causal, optimal, or organizationally validated.

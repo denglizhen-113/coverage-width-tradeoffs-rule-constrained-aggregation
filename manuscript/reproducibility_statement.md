@@ -1,0 +1,3 @@
+# Reproducibility Statement
+
+The analysis is implemented in Python; the exact runtime used for a submission should be recorded in the archival environment file. Dependencies are listed in `requirements.txt`. The current test suite contains 44 passing tests, and stochastic ranking retention and prediction baselines use fixed random seeds. `run_all.py --skip-preprocess --submission-audit` regenerates the analytical, audit, manuscript, and submission-review outputs from processed inputs. The source-data SHA-256 is recorded in `outputs/tables/data_audit_summary.csv`; regenerated deterministic artifacts can be independently checksummed at release time.

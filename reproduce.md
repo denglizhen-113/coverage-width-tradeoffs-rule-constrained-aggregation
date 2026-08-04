@@ -1,0 +1,223 @@
+# Reproduction Commands and Paper Mapping
+
+Run every command from the repository root in the listed order. These are the
+commands used by the Stage 26AA clean-room verification; none assumes a
+pre-existing processed table, result figure, replication archive, or cache.
+
+## 1. Environment
+
+```powershell
+$env:CONDA_PKGS_DIRS = Join-Path (Get-Location) '.conda-pkgs'
+conda create --yes --prefix .conda-env --file conda-lock-win-64.txt
+$env:PYTHONNOUSERSITE = '1'
+$env:MPLCONFIGDIR = Join-Path (Get-Location) '.mplconfig'
+$py = Resolve-Path '.conda-env\python.exe'
+& $py -m pip install --no-cache-dir -r requirements.txt -r requirements-docs.txt
+```
+
+Expected: an isolated environment, package cache, and Matplotlib configuration
+containing the exact win-64 Conda builds and the exact direct versions in both
+requirement files. The binary lock is needed
+because PyPI and Conda builds with the same NumPy/Pandas/Matplotlib version
+produce numerically equivalent tables but not the historical byte hashes and
+PNG dimensions used by the Stage 26X-2 protected-input gate. This step creates
+no paper result.
+
+## 2. Empirical Audit and Core Inference
+
+```powershell
+& $py run_all.py
+```
+
+This executes Stages 01-12 from the raw COMAP CSV. Among its outputs are the
+audited 4,199-row panel, regime-specific identified sets, empirical summary
+tables, and core manuscript inputs. Relevant later inputs include:
+
+- `outputs/tables/identification_comparison_by_regime.csv`
+- `outputs/tables/ranking_identification_summary_rplus.csv`
+- `outputs/tables/ranking_tie_policy_sensitivity.csv`
+- `outputs/tables/uncertainty_by_week_regime_p.csv`
+
+Paper mapping: empirical application in Section 9.5 and the empirical evidence
+underlying the model-assumption and claim-boundary discussion. The inferred
+quantities are not observed public votes.
+
+## 3. Freeze the Generated Core and Build Stage 21 Inputs
+
+```powershell
+& $py run_all.py --overnight-submission
+& $py run_all.py --general-submission
+& $py scripts/18_specific_journal_submission.py --project-root .
+```
+
+The first command builds the Stage 13-16 audit chain required by Stage 17,
+including `outputs/logs/overnight_go_no_go_report.md`. Expected downstream
+provenance outputs include:
+
+- `outputs/tables/frozen_outputs_hashes.csv`
+- `outputs/tables/reference_insertion_plan.csv`
+
+These are provenance inputs for Stages 21-23, not new experimental claims.
+
+## 4. Main Conceptual and Synthetic Figures
+
+```powershell
+& $py scripts/21_dss_full_attack.py --project-root .
+$stage22Tests = @(
+    'tests/test_constraints.py',
+    'tests/test_counterfactuals.py',
+    'tests/test_decision_analysis_submission.py',
+    'tests/test_dss_submission_candidate.py',
+    'tests/test_dss_upgrade.py',
+    'tests/test_dynamic_preference.py',
+    'tests/test_general_submission_strategy.py',
+    'tests/test_high_tier_upgrade_strategy.py',
+    'tests/test_identification_features.py',
+    'tests/test_overnight_submission.py',
+    'tests/test_prediction.py',
+    'tests/test_preprocessing.py',
+    'tests/test_ranking_identification.py',
+    'tests/test_robust_aggregation.py',
+    'tests/test_specific_journal_submission.py',
+    'tests/test_submission_audit.py'
+)
+& $py -m pytest @stage22Tests -q -p no:cacheprovider
+& $py scripts/22_dss_submission_candidate.py --project-root . --tests-passed 69
+```
+
+The declared subset is the complete 69-test contract set that existed when
+the frozen Stage 22 evaluation figure was generated. The later 26X contracts
+are run separately in Section 9. Stage 22 receives `69` only after this command
+actually reports `69 passed`.
+
+Command-to-paper mapping:
+
+| Generated output | Paper item |
+|---|---|
+| `outputs/figures/dss_conceptual_framework.png` | Figure 1 |
+| `outputs/figures/decision_support_workflow.png` | Figure 2 |
+| `outputs/figures/discretion_identifiability_frontier.png` | Figure 3 |
+| `outputs/figures/disclosure_uncertainty_curve.png` | Figure 4 |
+| `outputs/figures/rule_robustness_heatmap.png` | Figure 5 |
+| `outputs/figures/dss_evaluation_radar.png` | Figure 8 |
+| `outputs/tables/decision_alternatives_criteria.csv` | Table 1 source |
+| `outputs/tables/design_recommendation_matrix.csv` | Table 8 source |
+
+Figures 3-5 are bounded synthetic/configuration diagnostics. Figure 8 is an
+artifact-completeness check, not user validation.
+
+## 5. Remaining Main Table Sources
+
+```powershell
+& $py scripts/23_dss_submission_integrity.py --project-root . --tests-passed 69 --skip-snapshot-reproduction
+```
+
+Expected and mapped outputs:
+
+| Generated output | Paper item |
+|---|---|
+| `outputs/tables/assumption_inventory.csv` | Table 2 source |
+| `outputs/tables/baseline_definition_table.csv` | Table 3 source |
+| `outputs/tables/claim_evidence_alignment.csv` | Table 9 source |
+
+`--tests-passed 69` records the completed pre-Stage-23 contract run above;
+`--skip-snapshot-reproduction` avoids Stage 23's redundant nested workspace.
+It does not skip any main table listed here.
+
+## 6. Stage 26X-1 Preregistered Multiseed Experiment
+
+```powershell
+& $py scripts/26x1_multiseed_sensitivity.py --mode run --root .
+```
+
+This command must generate all of the following from the locked
+`outputs/stage26X-1/PREREGISTERED_DESIGN.md`:
+
+- 20 preregistered seeds.
+- 12 internal regions: 3 active-set sizes x 4 outcome-noise levels.
+- 3 external candidate-round regions.
+- 15 parameter regions, 300 seed-region cells/raw files.
+- 67,200 simulated cases: 60,000 internal and 7,200 external.
+- 261,600 method-level raw rows.
+
+Paper mapping:
+
+| Generated output | Paper item |
+|---|---|
+| `outputs/stage26X-1/tables/Table4_multiseed.csv` | Table 4 |
+| `outputs/stage26X-1/tables/Table5_multiseed.csv` | Table 5 |
+| `outputs/stage26X-1/Figure_06_multiseed_internal_sensitivity.png` and `.pdf` | Figure 6 |
+| `outputs/stage26X-1/Figure_07_multiseed_external_sensitivity.png` and `.pdf` | Figure 7 |
+| `outputs/stage26X-1/ROBUSTNESS_ASSESSMENT.md` | Section 9.1-9.2 claims and intervals |
+
+## 7. Stage 26X-2 Baselines and Ablation
+
+```powershell
+& $py scripts/26x2_baselines_ablation.py --mode run --root .
+```
+
+The single registered command executes three separate experiment classes:
+
+| Class | Raw directory | Expected files | Expected rows |
+|---|---|---:|---:|
+| Maximum-entropy baseline | `outputs/stage26X-2/raw/max_entropy/` | 300 | 67,200 |
+| Bayesian baseline | `outputs/stage26X-2/raw/bayesian/` | 300 | 67,200 |
+| Component ablation | `outputs/stage26X-2/raw/ablation/` | 300 | 156,000 |
+
+Stage 26X-2 total: 900 raw files and 290,400 rows. Stage 26X-1 plus Stage
+26X-2 total: 1,200 raw files and 552,000 rows.
+
+Paper mapping:
+
+| Generated output | Paper item |
+|---|---|
+| `outputs/stage26X-2/tables/attribution_pairwise_cells.csv` and `attribution_regions.csv` | Table 6 and Section 9.3 |
+| `outputs/stage26X-2/tables/ablation_paired_effects.csv` and `ablation_effect_summary.csv` | Table 7 and Section 9.4 |
+| `outputs/stage26X-2/BASELINE_IMPLEMENTATION.md` | Baseline definition and posterior-status disclosure |
+| `outputs/stage26X-2/ABLATION_RESULTS.md` | Component-effect disclosure |
+| `outputs/stage26X-2/ATTRIBUTION_RULING.md` | Method-selection boundary |
+
+## 8. Rebuild the Manuscript-Facing Integration
+
+```powershell
+& $py scripts/26x3_reposition_manuscript.py --project-root .
+```
+
+Expected:
+`outputs/stage26X-3/METHODS_submission_draft_STAGE26X3_source.md` plus its
+disclosure and positioning reports. Tables 4-7 are rebuilt into this source
+from Stage 26X-1/26X-2 outputs. The command does not alter Stage 26W or either
+preregistration.
+
+## 9. Focused Contracts and Final Verification
+
+```powershell
+& $py -m pytest tests/test_stage26x1_multiseed.py tests/test_stage26x2_baselines_ablation.py -q -p no:cacheprovider
+& $py verify_reproduction.py
+```
+
+Expected:
+
+- focused tests pass;
+- `outputs/reproduction_verification.json` and
+  `outputs/reproduction_verification.md` are created;
+- every table comparison passes at absolute tolerance `1e-12` with exact
+  nonnumeric cells;
+- all eight PNGs match their reference pixels;
+- raw file/row counts equal the registered totals;
+- the rebuilt Stage 26X-3 manuscript is byte-identical to the reference.
+
+## Runtime and Storage
+
+The pre-Stage-26AA archive contained 66.41 MiB of 26X raw CSVs: 24.84 MiB for
+Stage 26X-1 and 41.57 MiB for Stage 26X-2. No single file exceeded 0.10 MiB,
+so GitHub's single-file limit was not the issue; the archive is omitted because
+1,200 deterministic raw files are more efficiently regenerated.
+
+Before clean verification, the observed Stage 26X-1 file-write span in the
+retained run was about 76 minutes. Stage 26X-2 logged about 476 aggregate
+cell-seconds plus summary time. Plan for roughly 1-2 CPU hours for Stage 26X-1
+and 10-20 minutes for Stage 26X-2 on a modern four-core desktop, plus the core
+pipeline. These are operational estimates, not benchmark claims. The measured
+Stage 26AA clean-room times are recorded in the top-level
+`outputs/stage26AA/REPRODUCIBILITY_VERIFICATION.md` after execution.

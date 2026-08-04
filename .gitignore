@@ -1,0 +1,25 @@
+# Python environments and caches
+.venv*/
+.conda-env/
+.conda-pkgs/
+.mplconfig/
+venv/
+env/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Local scratch and temporary clean-room reproductions
+tmp/
+outputs/stage23_reproduction_*/
+
+# Deterministically generated, high-volume data and replication archives
+data/processed/
+outputs/stage26X-1/raw/
+outputs/stage26X-2/raw/
+
+# Operating-system and editor metadata
+.DS_Store
+Thumbs.db
+*.swp
+~$*

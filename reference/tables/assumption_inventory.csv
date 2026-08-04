@@ -1,0 +1,11 @@
+component,assumption,assumption_type,implementation_source,consequence_if_violated,claim_boundary
+P feasible set,Public shares are nonnegative and sum to one.,formal state-space assumption,src/constraints.py,LP bounds are undefined outside the simplex.,"Use feasible support intervals, not recovered votes."
+P outcome rule,Observed eliminations imply documented combined-score inequalities.,institutional rule encoding,src/constraints.py,Incorrect rule coding changes the compatible set.,Conditioned on documented percentage-rule assumptions.
+R and R_plus,Public input is a strict rank permutation.,representation assumption,src/ranking_identification.py,Weak orders require a different model.,Ordinal feasible rankings are not cardinal shares.
+Tie handling,Named judge-rank tie policy is applied.,sensitivity assumption,src/ranking_identification.py,Tie policy can alter feasible rankings.,Report tie-policy sensitivity and no universal rank truth.
+Judge save,R_plus weak condition permits bottom-(k+1) membership.,discretion rule assumption,src/ranking_identification.py,Direct and weak readings identify different sets.,Expert discretion is an auditable governance tradeoff.
+Disclosure,Synthetic releases add truthful compatible constraints.,scenario assumption,src/value_of_disclosure.py,Incompatible/noisy releases need not shrink a set.,Disclosure ordering is claimed only for nested compatible additions.
+Synthetic truth,The simulator hides latent public shares/ranks from inference.,simulation design,src/synthetic_benchmark.py; src/external_testbed.py,Leakage would invalidate coverage calibration.,Known truth exists only inside the synthetic simulator.
+Noise,Noisy outcomes intentionally violate the generating rule.,stress-test design,src/synthetic_benchmark.py,Coverage can fall under misspecification.,"Noise result is a stress test, not prediction accuracy."
+RRI,Configurations and predicates are predeclared and applicable.,robustness summary,src/rule_robustness_index.py,Unlisted configurations are not covered.,"RRI is bounded support share, not optimality."
+Artifact,User-supplied inputs are documented and valid.,prototype contract,src/dss_artifact.py,Missing/invalid inputs yield no defensible recommendation.,Artifact gives conditional design guidance only.

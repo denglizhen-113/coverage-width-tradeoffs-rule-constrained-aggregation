@@ -1,0 +1,7 @@
+# DSS Artifact and Workflow
+
+The prototype is a model-driven, design-oriented DSS artifact rather than a collection of scripts. Its JSON input contract records observed elimination outcomes, aggregation-rule type, judge-save assumption, tie-handling assumption, disclosure regime, and decision objective. The artifact converts those inputs into a rule-specific feasible-set width, uncertainty class, predeclared rule-robustness label where available, disclosure recommendation, design warning, and accountability implication.
+
+For an institutional organizer or platform governance analyst, the supported alternatives are to maintain or adjust an aggregation rule, document or narrow expert discretion, select a disclosure regime, and specify a tie protocol. The supported criteria are conditional uncertainty, robustness to named assumptions, auditability, privacy/reporting tradeoffs, and implementation burden. Recommendation logic is bounded: a broad compatible set under an uncertainty-reduction objective prompts a least-intrusive disclosure recommendation, whereas a discretion-preservation objective prompts a documented eligibility-and-rationale record.
+
+The artifact supplies a reproducible demonstration and artifact-level evaluation. It is not deployed, has not been adopted by an organization, has not been evaluated by human participants, and has no measured organizational impact. Decision objectives, privacy assessment, legal review, stakeholder consultation, and implementation authority remain outside the system.
