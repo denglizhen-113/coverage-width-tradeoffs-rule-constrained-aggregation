@@ -4,6 +4,26 @@ Run every command from the repository root in the listed order. These are the
 commands used by the Stage 26AA clean-room verification; none assumes a
 pre-existing processed table, result figure, replication archive, or cache.
 
+## Source Data Input
+
+The raw input `data/raw/2026_MCM_Problem_C_Data.csv` is included in this
+package. It is the official COMAP 2026 MCM Problem C data file (421
+contestant-season rows, 53 columns, 90,002 bytes), byte-identical to the
+official download:
+
+- Official problem page:
+  https://contest.comap.com/undergraduate/contests/mcm/contests/2026/problems/index.html
+- Official data file:
+  https://contest.comap.com/undergraduate/contests/mcm/contests/2026/problems/2026_MCM_Problem_C_Data.csv
+- SHA-256:
+  `EA99CAEC6EA243BDB450A1971A95BA8A95701A93BE7FF29F0BA3C57D72DDFF52`
+
+Use of the file is governed by `DATA_TERMS.md`: COMAP permits reproduction
+for academic/research purposes only, and this repository does not relicense
+the data. The Stage 26AA clean-room reproduction starts from this included
+file; it does not download it. If you redistribute the package, preserve
+`DATA_TERMS.md` and the COMAP attribution.
+
 ## 1. Environment
 
 ```powershell

@@ -68,7 +68,7 @@ The same page directly links the Problem C CSV, and the linked file is
 byte-identical to the local raw file. This is explicit permission to reproduce
 that COMAP file for this repository's academic/research purpose. The repository
 must preserve the attribution, source URL, and use limitation in
-`LICENSE-DATA`; it must not relabel the data as CC0, CC BY, MIT, or unrestricted
+`DATA_TERMS.md`; it must not relabel the data as CC0, CC BY, MIT, or unrestricted
 open data.
 
 ## Nature of the Compilation
@@ -107,7 +107,7 @@ tables remain locally regenerated and are excluded from Git history.
 ## Repository and Manuscript Consequence
 
 The repository may include the checksum-verified raw CSV under
-`data/raw/`, accompanied by `LICENSE-DATA`. Code is separately licensed under
+`data/raw/`, accompanied by `DATA_TERMS.md`. Code is separately licensed under
 MIT. Generated results and row-level derivatives must not be described as
 unrestricted data.
 
@@ -123,3 +123,12 @@ and verified, is:
 Until a nonempty remote repository has actually been verified, the manuscript
 must not state that these materials are publicly available.
 
+## Stage 26AA-1 Note
+
+On 2026-08-04, Stage 26AA-1 removed the standalone `LICENSE-DATA` file and
+replaced it with `DATA_TERMS.md`, which records the source, checksum,
+verbatim COMAP permission, and the academic/research scope of use. The two
+`LICENSE-DATA` file-name references above were updated to `DATA_TERMS.md`
+accordingly. The assessment's substance (limited academic/research
+redistribution, no CC/re-licensing, byte-identity of the raw CSV) is
+unchanged.
