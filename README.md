@@ -62,11 +62,11 @@ expected outputs, paper mappings, and resource observations.
 | `scripts/`, `src/` | Canonical runnable pipeline and shared modules |
 | `code/` | Deposit-facing mirror of the 26X-1/26X-2 experiment scripts and source modules |
 | `data/raw/` | Checksum-verified COMAP source data |
-| `manuscript/` | Historical inputs plus the current non-frozen Stage 26AF research draft |
-| `docs/stage26AC/`, `docs/stage26AC-1/`, `docs/stage26AD/`, `docs/stage26AF/` | Claim, publication-surface, literature, citation, figure, and post-edit audit records |
+| `manuscript/` | Historical inputs plus the current non-frozen Stage 26AF-1 research draft |
+| `docs/stage26AC/`, `docs/stage26AC-1/`, `docs/stage26AD/`, `docs/stage26AF/`, `docs/stage26AF-1/` | Claim, publication-surface, literature, citation, figure, and post-edit audit records |
 | `outputs/stage26W/` | Locked manuscript input required by 26X hash gates |
 | `outputs/stage26X-1/`, `outputs/stage26X-2/` | Locked preregistration inputs; generated results appear here |
-| `reference/` | Historical clean-room expectations plus the separate Stage 26AF figure contract |
+| `reference/` | Historical clean-room expectations plus the separate Stage 26AF and final Stage 26AF-1 figure contracts |
 | `tests/` | The historical 100-test default collection, including focused 26X contracts |
 | `contracts/` | Stage-scoped post-historical contracts, run explicitly and excluded from the 98/100 pre-generation denominator |
 | `conda-lock-win-64.txt` | Exact Windows binary builds required by historical 26X hashes |

@@ -267,6 +267,42 @@ test compares regenerated Stage 26AF PNG hashes with the Stage 26AF reference
 manifest when both are present. It never overwrites or repurposes the historical
 8/8 pixel record.
 
+## 11. Stage 26AF-1 Final 6+2 Figure Contract
+
+Run this stage only after Stage 26AF has completed. The generator intentionally
+replaces its own `outputs/stage26AF-1/` directory on rerun, so do not run the
+contract test concurrently with the generator.
+
+```powershell
+& $py scripts/26af1_figure5_conversion.py --root . --source-manuscript manuscript/METHODS_research_draft_STAGE26AF.md --stage26af-dir outputs/stage26AF --output-dir outputs/stage26AF-1
+& $py -m pytest contracts/test_stage26af1_figure_contract.py -q -p no:cacheprovider
+```
+
+The command does not rerun an experiment or calculate a new result. It copies
+the retained Stage 26AF PDF/PNG bytes into the final numbering, converts the
+former Figure 5 into the final Table 9 `CE10` record, and retains both removed
+figures as unnumbered repository diagnostics. The CSV remains at
+`outputs/tables/rule_robustness_index.csv` and is also preserved in the Stage
+26AF reference package.
+
+Final mapping:
+
+| Stage 26AF-1 output | Final disposition |
+|---|---|
+| `outputs/stage26AF-1/figures/main/Figure_01_rule_conditioned_inference_architecture.*` | Figure 1 |
+| `outputs/stage26AF-1/figures/main/Figure_02_reproducible_comparison_workflow.*` | Figure 2 |
+| `outputs/stage26AF-1/figures/main/Figure_03_discretion_identifiability_frontier.*` | Figure 3 |
+| `outputs/stage26AF-1/figures/main/Figure_04_compatible_disclosure_scenarios.*` | Figure 4 |
+| `outputs/stage26AF-1/figures/main/Figure_05_multiseed_internal_sensitivity.*` | Figure 5 |
+| `outputs/stage26AF-1/figures/main/Figure_06_multiseed_external_sensitivity.*` | Figure 6 |
+| `outputs/stage26AF-1/figures/repository_diagnostic/RRI_Record_predeclared_conclusions.*` | Unnumbered RRI reproducibility record; source for Table 9 CE10 |
+| `outputs/stage26AF-1/figures/repository_diagnostic/Artifact_Check_evidence_completeness.*` | Unnumbered artifact-completeness diagnostic |
+
+The historical 8/8 PNG assertion, the Stage 26AF 7+1 checkpoint, and the Stage
+26AF-1 6+2 final contract are stage-scoped and coexist. The Stage 26AF-1 focused
+test is under `contracts/`, so the documented pre-generation default result
+remains 98/100 with only the two disclosed order-dependent failures.
+
 ## Runtime and Storage
 
 The pre-Stage-26AA archive contained 66.41 MiB of 26X raw CSVs: 24.84 MiB for
