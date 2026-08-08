@@ -62,12 +62,13 @@ expected outputs, paper mappings, and resource observations.
 | `scripts/`, `src/` | Canonical runnable pipeline and shared modules |
 | `code/` | Deposit-facing mirror of the 26X-1/26X-2 experiment scripts and source modules |
 | `data/raw/` | Checksum-verified COMAP source data |
-| `manuscript/` | Historical inputs plus the current non-frozen Stage 26AD research draft |
-| `docs/stage26AC/`, `docs/stage26AC-1/`, `docs/stage26AD/` | Claim, publication-surface, literature, and citation-integrity records |
+| `manuscript/` | Historical inputs plus the current non-frozen Stage 26AF research draft |
+| `docs/stage26AC/`, `docs/stage26AC-1/`, `docs/stage26AD/`, `docs/stage26AF/` | Claim, publication-surface, literature, citation, figure, and post-edit audit records |
 | `outputs/stage26W/` | Locked manuscript input required by 26X hash gates |
 | `outputs/stage26X-1/`, `outputs/stage26X-2/` | Locked preregistration inputs; generated results appear here |
-| `reference/` | Expected tables, figures, and manuscript used only by `verify_reproduction.py` |
-| `tests/` | The 69-test pre-Stage-23 contract set plus focused 26X contracts |
+| `reference/` | Historical clean-room expectations plus the separate Stage 26AF figure contract |
+| `tests/` | The historical 100-test default collection, including focused 26X contracts |
+| `contracts/` | Stage-scoped post-historical contracts, run explicitly and excluded from the 98/100 pre-generation denominator |
 | `conda-lock-win-64.txt` | Exact Windows binary builds required by historical 26X hashes |
 
 ## Start
@@ -95,11 +96,12 @@ was not reconstructed. See `REPOSITORY_HISTORY_NOTE.md`. The one known Stage 24
 manifest-order discrepancy is documented in `KNOWN_FROZEN_EXCEPTIONS.md` and
 does not alter the frozen package.
 
-The current `manuscript/METHODS_research_draft_STAGE26AD.md` is intentionally
+The current `manuscript/METHODS_research_draft_STAGE26AF.md` is intentionally
 separate from the byte-locked Stage 26X-3 reference used by
-`verify_reproduction.py`. The former contains later factual and literature
-corrections; the latter remains only as the historical clean-room comparison
-target.
+`verify_reproduction.py`. The former contains later factual, literature,
+figure, wording, and complexity corrections; the latter remains only as the
+historical clean-room comparison target. Stage 26AD is retained as the direct
+source for the reproducible Stage 26AF transformation.
 
 ## Historical Submission Generators
 
@@ -107,5 +109,5 @@ Scripts for Stages 25HA-25HF and 26Y are retained to preserve the documented
 DSS/EJOR preparation history. Their templates can contain dated journal,
 repository, anonymity, or release-gate language. They are not current SIMPAT
 submission materials and must not be rerun or quoted as current state without
-a fresh factual audit. The current non-frozen research draft is Stage 26AD;
+a fresh factual audit. The current non-frozen research draft is Stage 26AF;
 the planned journal-format migration is Stage 26AB.

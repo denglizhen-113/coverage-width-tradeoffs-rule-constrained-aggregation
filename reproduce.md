@@ -129,12 +129,14 @@ Command-to-paper mapping:
 | `outputs/figures/discretion_identifiability_frontier.png` | Figure 3 |
 | `outputs/figures/disclosure_uncertainty_curve.png` | Figure 4 |
 | `outputs/figures/rule_robustness_heatmap.png` | Figure 5 |
-| `outputs/figures/dss_evaluation_radar.png` | Figure 8 |
+| `outputs/figures/dss_evaluation_radar.png` | Repository-only artifact-completeness diagnostic (historical Figure 8) |
 | `outputs/tables/decision_alternatives_criteria.csv` | Table 1 source |
 | `outputs/tables/design_recommendation_matrix.csv` | Table 8 source |
 
-Figures 3-5 are bounded synthetic/configuration diagnostics. Figure 8 is an
-artifact-completeness check, not user validation.
+Figures 3-5 are bounded synthetic/configuration diagnostics. The historical
+Figure 8 is an artifact-completeness check, not model validation or user
+validation. Stage 26AF removes it from the main manuscript but retains the
+underlying table, generator, and repository diagnostic.
 
 ## 5. Remaining Main Table Sources
 
@@ -242,6 +244,28 @@ It does not overwrite or certify the later non-frozen
 `manuscript/METHODS_research_draft_STAGE26AD.md`, whose factual corrections and
 literature verification are documented under `docs/stage26AC/` and
 `docs/stage26AD/`.
+
+## 10. Stage 26AF Presentation Contract
+
+After Stages 26X-1 through 26X-3 have generated their registered outputs, run:
+
+```powershell
+& $py scripts/26af_figure_rebuild_complexity.py --root . --source-manuscript manuscript/METHODS_research_draft_STAGE26AD.md --output-dir outputs/stage26AF
+& $py -m pytest contracts/test_stage26af_figure_contract.py -q -p no:cacheprovider
+```
+
+This stage does not rerun an experiment. It reads existing tracked tables and
+logs, creates seven main-manuscript figures as embedded-font vector PDFs and
+600 dpi PNGs, retains the former Figure 8 as an unnumbered repository artifact
+check, inserts the analytic complexity boundary into a new non-frozen
+manuscript, and recomputes the 24-item claim audit.
+
+The historical eight-PNG clean-room contract and the Stage 26AF contract are
+separate. The former remains under `reference/figures/` and
+`reference/stage26X-1/`; the latter is under `reference/stage26AF/`. The focused
+test compares regenerated Stage 26AF PNG hashes with the Stage 26AF reference
+manifest when both are present. It never overwrites or repurposes the historical
+8/8 pixel record.
 
 ## Runtime and Storage
 
