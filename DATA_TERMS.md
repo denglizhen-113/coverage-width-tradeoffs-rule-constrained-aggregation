@@ -2,6 +2,8 @@
 
 ## Dataset
 
+- Repository:
+  https://github.com/denglizhen-113/coverage-width-tradeoffs-rule-constrained-aggregation
 - File: `data/raw/2026_MCM_Problem_C_Data.csv`
 - Source: COMAP MCM 2026 competition problem materials (2026 MCM Problem C:
   "Data With The Stars")

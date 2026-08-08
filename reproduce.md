@@ -4,6 +4,16 @@ Run every command from the repository root in the listed order. These are the
 commands used by the Stage 26AA clean-room verification; none assumes a
 pre-existing processed table, result figure, replication archive, or cache.
 
+Repository URL:
+https://github.com/denglizhen-113/coverage-width-tradeoffs-rule-constrained-aggregation
+
+The order below is part of the reproducibility contract. A direct `pytest`
+run before generating the omitted processed data and tables passes 98 of 100
+collected staged-package tests; the two failures assert outputs that do not
+exist until the preceding generation commands complete. The verified claim is
+that tests pass after following this document in order, not that a fresh clone
+is bare-`pytest` green before generation.
+
 ## Source Data Input
 
 The raw input `data/raw/2026_MCM_Problem_C_Data.csv` is included in this
@@ -226,6 +236,12 @@ Expected:
 - all eight PNGs match their reference pixels;
 - raw file/row counts equal the registered totals;
 - the rebuilt Stage 26X-3 manuscript is byte-identical to the reference.
+
+This byte-identity check concerns the historical Stage 26X-3 reconstruction.
+It does not overwrite or certify the later non-frozen
+`manuscript/METHODS_research_draft_STAGE26AD.md`, whose factual corrections and
+literature verification are documented under `docs/stage26AC/` and
+`docs/stage26AD/`.
 
 ## Runtime and Storage
 

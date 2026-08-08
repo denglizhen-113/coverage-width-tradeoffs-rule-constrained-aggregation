@@ -22,7 +22,7 @@ EJOR_GUIDE_URL = (
 EJOR_HOME_URL = (
     "https://www.sciencedirect.com/journal/european-journal-of-operational-research"
 )
-REPOSITORY_URL = "https://github.com/denglizhen-113/rule-aware-dss-expert-crowd"
+REPOSITORY_URL = "https://github.com/denglizhen-113/coverage-width-tradeoffs-rule-constrained-aggregation"
 RETRIEVED = "2026-07-31"
 
 OUTPUT_NAMES = {
@@ -179,7 +179,7 @@ def migrate_manuscript(source: str) -> str:
 
     data_section = """## Data and Code Availability
 
-The data, code, fixed seed list, configurations, and generated audit artifacts supporting this study are retained in the local reproducibility package. The designated public repository is https://github.com/denglizhen-113/rule-aware-dss-expert-crowd. As checked on 2026-07-31, that repository was still empty; public availability must not be claimed until the tracked package is uploaded and its manifest is verified.
+The data, code, fixed seed list, configurations, and generated audit artifacts supporting this study are retained in the local reproducibility package. The designated repository is https://github.com/denglizhen-113/coverage-width-tradeoffs-rule-constrained-aggregation. Public availability must not be claimed until the tracked package is uploaded, made public with author authorization, and verified anonymously.
 
 """ + DECLARATIONS
     manuscript, count = re.subn(
@@ -245,7 +245,7 @@ These adverse comparisons are central to the manuscript. We do not claim that ru
 
 The evaluation uses 20 preregistered seeds and 300 registered seed-parameter cells. The multi-seed sensitivity archive contains {x1_rows:,} raw replication rows. Independent baseline and ablation archives contain {x2_rows:,} additional rows, for {x1_rows + x2_rows:,} retained raw rows locally. The fixed Bayesian draw bank contains 94 insufficient-posterior rows, including 10 under zero outcome noise; all are disclosed, with no replacement draws or deletion.
 
-AUTHOR ACTION REQUIRED BEFORE SUBMISSION: the designated public repository currently contains no files. Upload the tracked reproducibility package, verify its manifest, and only then replace this notice with a factual availability statement. Until that action is complete, this draft does not claim that the raw records are publicly accessible.
+AUTHOR ACTION REQUIRED BEFORE SUBMISSION: verify the tracked reproducibility package at the designated repository after the final private push and public-release transition. Replace this notice only after anonymous URL, raw-data, manifest, and clean-clone checks pass. Until then, this draft does not claim that the raw records are publicly accessible.
 
 The empirical competition record is used as a testbed for a general expert-crowd aggregation problem. The manuscript does not claim to observe the true audience vote, establish organizational effects, or show uniform method superiority.
 
@@ -405,7 +405,7 @@ This Stage 26Y package completes the previously omitted migration and preserves 
 
 ## Repository release gate
 
-The designated repository, {REPOSITORY_URL}, was publicly reachable but empty when checked on {RETRIEVED}. Statements in older Stage 25 files that data and code are already publicly available are therefore not currently true. Upload and checksum verification are required before any manuscript or cover letter claims public availability.
+The repository check recorded on {RETRIEVED} found the then-designated repository publicly reachable but empty. That result is historical and does not establish the current state of {REPOSITORY_URL}. A fresh anonymous URL, raw-data, manifest, and clean-clone verification is required before any manuscript or cover letter claims public availability.
 """
 
 

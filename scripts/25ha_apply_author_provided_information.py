@@ -156,7 +156,7 @@ GITHUB CODE URL STILL REQUIRED.
 
 REPOSITORY LICENSE INPUT STILL REQUIRED.
 
-Recommended options for author decision only: MIT License for code; CC BY 4.0 or CC0 for data, subject to data constraints and author approval.
+Recommended repository terms: MIT License for code; preserve the verified source-data permission, attribution, and access conditions in DATA_TERMS.md. Do not apply an additional repository license to source data.
 
 ## 14. Generative-AI Declaration
 
@@ -321,7 +321,7 @@ No upload, DOI, release, tag, or external deposit has been created. REPOSITORY L
 
 REPOSITORY LICENSE INPUT STILL REQUIRED.
 
-Recommended options for author decision only: MIT License for code; CC BY 4.0 or CC0 for data, depending on author preference, ownership, source terms, and data constraints.
+Recommended repository terms: MIT License for code; preserve the verified source-data permission, attribution, and access conditions in DATA_TERMS.md. Do not apply an additional repository license to source data.
 """,
         "REPOSITORY_DOI_PLACEHOLDER.md": """# Repository DOI Placeholder
 
@@ -369,7 +369,7 @@ def remaining_report() -> str:
         {"category": "Must be supplied before Stage 25H can pass", "remaining_item": "Corresponding author name and email", "status": "AUTHOR INPUT STILL REQUIRED", "why_it_remains": "The authors explicitly left corresponding authorship unresolved.", "next_author_action": "Confirm name and a valid email; obtain all-author approval."},
         {"category": "Must be supplied before Stage 25H can pass", "remaining_item": "GitHub data URL", "status": "AUTHOR INPUT STILL REQUIRED", "why_it_remains": "GitHub route is selected but no repository exists or URL is supplied.", "next_author_action": "Create/approve the repository outside Codex and provide the final stable URL."},
         {"category": "Must be supplied before Stage 25H can pass", "remaining_item": "GitHub code URL", "status": "AUTHOR INPUT STILL REQUIRED", "why_it_remains": "GitHub route is selected but no repository exists or URL is supplied.", "next_author_action": "Create/approve the repository outside Codex and provide the final stable URL."},
-        {"category": "Must be supplied before Stage 25H can pass", "remaining_item": "Repository license", "status": "AUTHOR INPUT STILL REQUIRED", "why_it_remains": "License choice is a legal/ownership decision.", "next_author_action": "Confirm code and data license terms."},
+        {"category": "Must be supplied before Stage 25H can pass", "remaining_item": "Repository terms", "status": "AUTHOR INPUT STILL REQUIRED", "why_it_remains": "Code licensing and source-data redistribution are legal/ownership decisions.", "next_author_action": "Confirm the MIT code license and COMAP source-data terms."},
         {"category": "Must be supplied before Stage 25H can pass", "remaining_item": "Exact AI tools and uses", "status": "AUTHOR INPUT STILL REQUIRED", "why_it_remains": "Current disclosure is conservative but needs author verification.", "next_author_action": "Confirm the exact tools, uses, and final declaration placement."},
         {"category": "Must be supplied before Stage 25H can pass", "remaining_item": "Figure provenance", "status": "AUTHOR INPUT STILL REQUIRED", "why_it_remains": "No author confirmation identifies the source/provenance of Figures 1-8.", "next_author_action": "Confirm each figure's code/data/manual origin and any AI assistance."},
         {"category": "Must be supplied before Stage 25H can pass", "remaining_item": "Final approval from all authors", "status": "AUTHOR INPUT STILL REQUIRED", "why_it_remains": "No collective final approval was supplied.", "next_author_action": "Record all-author final approval."},

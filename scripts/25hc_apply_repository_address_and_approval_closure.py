@@ -12,7 +12,7 @@ from pathlib import Path
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 PACKAGE = Path("submission_package_stage25")
 GITHUB_PROFILE_URL = "https://github.com/denglizhen-113"
-RECOMMENDED_REPOSITORY_NAME = "rule-aware-dss-expert-crowd"
+RECOMMENDED_REPOSITORY_NAME = "coverage-width-tradeoffs-rule-constrained-aggregation"
 CORRESPONDING_ADDRESS = (
     "Huazhong University of Science and Technology, 1037 Luoyu Road, "
     "Hongshan District, Wuhan, Hubei 430074, China"
@@ -87,7 +87,7 @@ Data availability: The data supporting the findings of this study will be made a
 
 GITHUB REPOSITORY URL STILL REQUIRED BEFORE FINAL UPLOAD.
 
-Data license plan: CC BY 4.0.
+Data terms: COMAP academic/research-purpose permission with attribution; see DATA_TERMS.md; no repository relicense.
 """
 
 
@@ -118,7 +118,7 @@ No repository has been created or accessed by this stage. This checklist disting
 
 - [ ] `README.md` explaining the project, data provenance, and rerun entry points.
 - [ ] `LICENSE-CODE-MIT` or `LICENSE` containing the formal MIT code license.
-- [ ] `LICENSE-DATA-CC-BY-4.0` or an explicit CC BY 4.0 data-license section in `README.md`.
+- [ ] `DATA_TERMS.md` containing the verified COMAP permission, attribution, official source URLs, and checksum.
 - [ ] `code/` containing the releasable scripts and modules.
 - [ ] `data/` containing only releasable data and required provenance notices.
 - [ ] `figures/` or `outputs/` containing the cited reproducible figures/tables.
@@ -128,7 +128,7 @@ No repository has been created or accessed by this stage. This checklist disting
 ## Availability and Release Checks
 
 - [x] Code license plan: MIT License.
-- [x] Data license plan: CC BY 4.0.
+- [x] Data terms: COMAP academic/research-purpose permission with attribution; no repository relicense.
 - [ ] Authors confirm that source-data terms permit the planned public release.
 - [ ] Data availability statement contains the final concrete repository URL.
 - [ ] Code availability statement contains the final concrete repository URL.
@@ -168,7 +168,7 @@ No explicit all-author approval was provided to Stage 25H-C. Leave every item be
 - [ ] Li Bo approved the final title, author order, CRediT role, declarations, and submission package.
 - [ ] All authors approved the corresponding-author designation.
 - [ ] All authors approved public GitHub release of data and code.
-- [ ] All authors approved the MIT License for code and CC BY 4.0 for data.
+- [ ] All authors approved the MIT License for code and preservation of the COMAP source-data terms without relicensing.
 
 CREDIT AUTHOR CONFIRMATION STILL REQUIRED.
 
@@ -187,7 +187,7 @@ FULL_STAGE25H_RERUN_NOT_ALLOWED_MULTIPLE_BLOCKERS
 
 - Corresponding-author postal address is recorded in the author packet and title-page template.
 - GitHub account homepage is recorded but is explicitly not treated as a repository URL.
-- MIT code-license and CC BY 4.0 data-license plans remain recorded.
+- MIT code licensing and COMAP source-data terms remain recorded.
 - DOCX remains the primary source, TEX the backup, and PDF preview/checking only.
 
 ## Remaining Conditions for a Full Stage 25H Rerun
@@ -209,7 +209,7 @@ Stage 25H-C applied only the newly confirmed corresponding-author address and re
 - Corresponding-author full address applied: {CORRESPONDING_ADDRESS}
 - GitHub account homepage recorded: {GITHUB_PROFILE_URL}
 - Concrete GitHub repository URL: still required; no repository was created or accessed.
-- License plan: MIT for code and CC BY 4.0 for data.
+- Repository terms: MIT for code; COMAP academic/research-purpose permission with attribution for source data; no data relicense.
 - Primary source: DOCX; backup source: TEX; PDF preview/checking only.
 - Final editor-validated page count: still required.
 - CRediT author confirmation: still required.

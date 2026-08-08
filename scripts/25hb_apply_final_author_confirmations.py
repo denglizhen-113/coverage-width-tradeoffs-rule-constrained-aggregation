@@ -176,15 +176,15 @@ GITHUB REPOSITORY URL STILL REQUIRED BEFORE FINAL UPLOAD.
 
 - Repository route: one public GitHub repository for data and code.
 - Confirmed GitHub account profile: {GITHUB_PROFILE_URL}
-- Preferred structure: code/, data/, docs/ or supplementary/, README.md, LICENSE or LICENSE-CODE, LICENSE-DATA or a README data-license section, CITATION.cff if available, and environment/requirements information.
+- Preferred structure: code/, data/, docs/ or supplementary/, README.md, LICENSE or LICENSE-CODE, DATA_TERMS.md, CITATION.cff if available, and environment/requirements information.
 - Publication repository URL: AUTHOR INPUT STILL REQUIRED. The confirmed account profile is not a repository URL.
 - Repository DOI: Not available at initial submission. DOI may be generated later through Zenodo if the authors choose.
 
 ## 13. License Choice
 
 - Code license plan: MIT License.
-- Data license plan: CC BY 4.0.
-- The formal license files must be added to the repository by the authors before final repository release.
+- Data terms: COMAP academic/research-purpose permission with attribution; see DATA_TERMS.md; no repository relicense.
+- The MIT code-license file and DATA_TERMS.md must be present in the repository before final release.
 
 ## 14. Generative-AI Declaration
 
@@ -291,7 +291,7 @@ Data availability: The data supporting the findings of this study will be made a
 
 GITHUB REPOSITORY URL STILL REQUIRED BEFORE FINAL UPLOAD.
 
-Data license plan: CC BY 4.0.
+Data terms: COMAP academic/research-purpose permission with attribution; see DATA_TERMS.md; no repository relicense.
 """,
         "code_availability_statement_OPTIONS_author_input_required.md": """# Code Availability Statement
 
@@ -328,28 +328,28 @@ Repository route: one public GitHub repository for data and code.
 
 Confirmed GitHub account profile: {GITHUB_PROFILE_URL}
 
-Required repository structure: code/, data/, docs/ or supplementary/, README.md, LICENSE or LICENSE-CODE, LICENSE-DATA or README data-license section, CITATION.cff if available, and environment/requirements information.
+Required repository structure: code/, data/, docs/ or supplementary/, README.md, LICENSE or LICENSE-CODE, DATA_TERMS.md, CITATION.cff if available, and environment/requirements information.
 
 Publication repository URL: AUTHOR INPUT STILL REQUIRED. The confirmed account profile is not a repository URL.
 
 No repository, DOI, release, tag, or external deposit has been created by Stage 25.
 
-Code license plan: MIT License. Data license plan: CC BY 4.0.
+Code license plan: MIT License. Data terms: COMAP academic/research-purpose permission with attribution; no repository relicense.
 """,
         "LICENSE_PLACEHOLDER.md": """# License Plan
 
 Code license plan: MIT License.
 
-Data license plan: CC BY 4.0.
+Data terms: COMAP academic/research-purpose permission with attribution; see DATA_TERMS.md; no repository relicense.
 
-The formal license files and any required third-party/source-data notices must be added to the GitHub repository by the authors before the repository is released. This local preparation package does not create a legal license grant.
+The MIT code-license file, DATA_TERMS.md, and any required third-party/source-data notices must be present in the GitHub repository before release. This local preparation package does not create a license grant for third-party data.
 """,
         "LICENSE_FILES_AUTHOR_ACTION_REQUIRED.md": """# Repository License Files: Author Action Required
 
 - [ ] Add the official MIT License text as LICENSE or LICENSE-CODE for code.
-- [ ] Add a CC BY 4.0 data-license notice as LICENSE-DATA or in the repository README.
+- [ ] Add DATA_TERMS.md with the verified COMAP permission, attribution, official source URLs, and checksum.
 - [ ] Confirm ownership, source-data terms, and third-party dependencies before release.
-- [ ] Confirm that the selected data license is appropriate for all released data.
+- [ ] Confirm that redistribution of source data remains within the COMAP academic/research-purpose terms recorded in DATA_TERMS.md.
 """,
         "REPOSITORY_DOI_PLACEHOLDER.md": f"""# Repository URL and DOI Status
 
@@ -369,7 +369,7 @@ Data availability: The data supporting the findings of this study will be made a
 
 GITHUB REPOSITORY URL STILL REQUIRED BEFORE FINAL UPLOAD.
 
-Data license plan: CC BY 4.0.
+Data terms: COMAP academic/research-purpose permission with attribution; see DATA_TERMS.md; no repository relicense.
 """,
         "CODE_AVAILABILITY_STATEMENT_OPTIONS.md": """# Code Availability Statement
 
@@ -388,7 +388,7 @@ def remaining_blockers_report() -> str:
         {"classification": "Resolved by this update", "item": "Corresponding author name", "status": "resolved", "evidence_or_condition": f"{CORRESPONDING_NAME} is confirmed as corresponding author.", "next_action": "Use on title page and cover letter."},
         {"classification": "Resolved by this update", "item": "Corresponding author email", "status": "resolved", "evidence_or_condition": CORRESPONDING_EMAIL, "next_action": "Use on title page and cover letter."},
         {"classification": "Resolved by this update", "item": "Li Bo affiliation", "status": "resolved", "evidence_or_condition": "Wuhan University of Technology.", "next_action": "Use on title page."},
-        {"classification": "Resolved by this update", "item": "License plan", "status": "resolved plan", "evidence_or_condition": "MIT License for code; CC BY 4.0 for data.", "next_action": "Authors must add formal files when creating the repository."},
+        {"classification": "Resolved by this update", "item": "Repository terms", "status": "resolved plan", "evidence_or_condition": "MIT License for code; COMAP academic/research-purpose permission and attribution for source data; no data relicense.", "next_action": "Preserve LICENSE and DATA_TERMS.md in the repository."},
         {"classification": "Resolved by this update", "item": "AI declaration", "status": "resolved declaration scope", "evidence_or_condition": "ChatGPT/Codex for language, readability, consistency, and submission-readiness review only.", "next_action": "Keep final wording consistent."},
         {"classification": "Resolved by this update", "item": "Figure provenance", "status": "confirmed", "evidence_or_condition": "Author confirms code/data/author-created figures with no generative-AI image assistance.", "next_action": "Stop if a later source review contradicts this statement."},
         {"classification": "Resolved by this update", "item": "Primary source format", "status": "resolved", "evidence_or_condition": "DOCX primary; TEX backup; PDF preview only.", "next_action": "Use DOCX for final source preparation."},
@@ -442,7 +442,7 @@ def declaration_check() -> str:
         {"topic": "Corresponding author", "status": "pass with portal boundary", "consistency finding": f"{CORRESPONDING_NAME} and {CORRESPONDING_EMAIL} align across title page, packet, and cover letter.", "remaining action": "Postal address only if portal requires it."},
         {"topic": "Funding and competing interests", "status": "pass", "consistency finding": "No-funding and no-competing-interest statements align across updated templates.", "remaining action": "Retain final author approval."},
         {"topic": "Ethics", "status": "pass with boundary", "consistency finding": "No-ethics-required statement remains consistent with artifact-level evaluation and a future protocol, not an executed human study.", "remaining action": "Do not add a user-study claim without revisiting ethics."},
-        {"topic": "Data/code and repository", "status": "open blocker", "consistency finding": f"GitHub route, account profile {GITHUB_PROFILE_URL}, and MIT/CC BY 4.0 plans align, but the publication repository URL is absent.", "remaining action": "Provide final public repository URL before upload."},
+        {"topic": "Data/code and repository", "status": "open blocker", "consistency finding": f"GitHub route, account profile {GITHUB_PROFILE_URL}, MIT code licensing, and COMAP source-data terms align, but the publication repository URL is absent.", "remaining action": "Provide final public repository URL before upload."},
         {"topic": "AI declaration and figures", "status": "pass with provenance check", "consistency finding": "Declared ChatGPT/Codex writing-process scope excludes figures; author confirms no generative-AI figure assistance.", "remaining action": "Stop if a later source review finds a contradiction."},
         {"topic": "CRediT", "status": "open blocker", "consistency finding": "Named role draft aligns with author order.", "remaining action": "CREDIT ROLES REQUIRE FINAL AUTHOR CONFIRMATION."},
         {"topic": "Manuscript declarations", "status": "pass with separation boundary", "consistency finding": "Author-specific declarations remain outside the anonymized manuscript.", "remaining action": "Keep title page and anonymous review file separated."},
@@ -520,7 +520,7 @@ def run(root: Path) -> int:
             "- Corresponding author: Deng Lizhen; email: 3070116993@qq.com.",
             "- Li Bo affiliation: Wuhan University of Technology.",
             f"- Confirmed GitHub account profile: {GITHUB_PROFILE_URL}; publication repository URL remains required.",
-            "- License plan: MIT for code and CC BY 4.0 for data.",
+            "- Repository terms: MIT for code; COMAP academic/research-purpose permission with attribution for source data; no data relicense.",
             "- AI declaration and figure provenance confirmation updated.",
             "- Primary source: DOCX; TEX backup; PDF preview only.",
             "- Fallback preview page count: 15; final editor validation still required.",

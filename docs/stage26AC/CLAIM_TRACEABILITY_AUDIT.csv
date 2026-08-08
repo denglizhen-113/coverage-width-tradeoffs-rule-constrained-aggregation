@@ -1,0 +1,25 @@
+claim_id,claim,computed_value,expected_value,status,evidence_files,note
+C01,Processed longitudinal panel rows,4199,4199,PASS,data/processed/panel_long.csv,Direct row count.
+C02,Identification feature rows,2777,2777,PASS,data/processed/identification_features_long.csv,Direct row count.
+C03,Typed public-appeal proxy rows,2766,2766,PASS,data/processed/identification_features_long.csv,Nonmissing proxy count; not a true public-vote label.
+C04,Feasible P weeks,247/248,247/248,PASS,outputs/tables/constraint_summary.csv,Season 18 Week 2 accounts for the logged skip.
+C05,R exact/sampled weeks and sampled draws,13 exact; 1 sampled; [50000],13 exact; 1 sampled; [50000],PASS,outputs/tables/ranking_identification_summary_r.csv,"Corrects the frozen manuscript's blanket 10,000-draw sentence."
+C06,R-plus exact/sampled weeks and sampled draws,36 exact; 37 sampled; [10000],36 exact; 37 sampled; [10000],PASS,outputs/tables/ranking_identification_summary_rplus.csv,Direct enumeration-method and evaluated-draw counts.
+C07,Preregistered seeds,20,20,PASS,outputs/stage26X-1/raw/*.csv,Distinct raw seed values.
+C08,Registered parameter regions,15,15,PASS,outputs/stage26X-1/raw/*.csv,12 internal plus 3 external regions.
+C09,Stage 26X-1 synthetic cases,67200,67200,PASS,outputs/stage26X-1/raw/*.csv,Sum of distinct replication IDs within each seed-region file.
+C10,Stage 26X-1 retained rows,261600,261600,PASS,outputs/stage26X-1/raw/*.csv,Direct CSV row count.
+C11,Stage 26X-2 retained rows,290400,290400,PASS,outputs/stage26X-2/raw/**/*.csv,"67,200 maximum-entropy + 67,200 Bayesian + 156,000 ablation rows."
+C12,Combined retained rows,552000,552000,PASS,outputs/stage26X-1/raw/*.csv; outputs/stage26X-2/raw/**/*.csv,Correct total for abstract and cover letter.
+C13,Rule-aware width below rule-agnostic width,300/300,300/300,PASS,outputs/stage26X-1/raw/*.csv,Cell-level mean comparison; direction follows set nesting.
+C14,Positive-noise coverage loss cells,180/180,180/180,PASS,outputs/stage26X-1/raw/internal_*.csv,Rule-agnostic minus rule-aware cell means.
+C15,Mean positive-noise coverage loss,0.050289,0.050289,PASS,outputs/stage26X-1/raw/internal_*.csv,Rounded to six decimals.
+C16,Elimination-removal coverage effect,0.050289,0.050289,PASS,outputs/stage26X-2/tables/ablation_paired_effects.csv,Positive-noise paired mean.
+C17,Elimination-removal width effect,0.163131,0.163131,PASS,outputs/stage26X-2/tables/ablation_paired_effects.csv,Positive-noise paired mean.
+C18,Positive-noise ablation improves coverage,180/180,180/180,PASS,outputs/stage26X-2/tables/ablation_paired_effects.csv,Paired cell count.
+C19,Clean-cell elimination removal changes coverage,0/60,0/60,PASS,outputs/stage26X-2/tables/ablation_paired_effects.csv,Absolute tolerance 1e-12.
+C20,Rule-aware Pareto dominance over Bayesian,0/120,0/120,PASS,outputs/stage26X-2/tables/attribution_pairwise_cells.csv,Clean same-information paired cells.
+C21,Bayesian Pareto dominance over rule-aware,14/120,14/120,PASS,outputs/stage26X-2/tables/attribution_pairwise_cells.csv,"All 14 are in the external 7-candidate, 3-round region."
+C22,Insufficient posterior rows,94,94,PASS,outputs/stage26X-2/raw/bayesian/*.csv,Retained; no adaptive resampling or deletion.
+C23,Raw files across Stage 26X-1/2,1200,1200,PASS,outputs/stage26X-1/raw; outputs/stage26X-2/raw,300 + 900 files.
+C24,Maximum Monte Carlo standard error,0.005000,0.005000,PASS,outputs/tables/ranking_identification_summary_r*.csv,"Maximum is 0.0049999936 before six-decimal rounding; numerical approximation error, not behavioral uncertainty."

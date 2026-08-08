@@ -21,7 +21,7 @@ from typing import Any
 
 
 TITLE = "Rule-Aware Decision Support for Expert-Crowd Aggregation under Hidden Public Preferences"
-REPOSITORY_URL = "https://github.com/denglizhen-113/rule-aware-dss-expert-crowd"
+REPOSITORY_URL = "https://github.com/denglizhen-113/coverage-width-tradeoffs-rule-constrained-aggregation"
 PACKAGE = Path("submission_package_stage25")
 SOURCE = PACKAGE / "02_manuscript/DSS_submission_draft_STAGE25H_E_final_source.md"
 SUBMISSION_DIR = PACKAGE / "02_submission_files"
@@ -655,7 +655,7 @@ def build_title_page(root: Path, rt: dict[str, Any]) -> None:
         ("CRediT Author Contributions", "Deng Lizhen: Conceptualization, Methodology, Software, Formal analysis, Investigation, Data curation, Visualization, Writing - original draft, Writing - review and editing, Project administration. Liu Yuxin: Writing - review and editing, Validation, Resources, Investigation. Li Bo: Supervision, Writing - review and editing, Validation."),
         ("Data Availability", f"The data supporting the findings of this study are available in the public GitHub repository: {REPOSITORY_URL}."),
         ("Code Availability", f"The code used in this study is available in the public GitHub repository: {REPOSITORY_URL}."),
-        ("Repository Licenses", "Code license: MIT License. Data license: CC BY 4.0."),
+        ("Repository Terms", "Code license: MIT License. Source-data terms: COMAP academic/research-purpose permission with attribution; see DATA_TERMS.md; no repository relicense."),
         ("Declaration of generative AI and AI-assisted technologies in the manuscript preparation process", "During the preparation of this work, the authors used ChatGPT and Codex only for language polishing, readability review, manuscript consistency checking, and submission-readiness review. After using these tools, the authors reviewed and edited the content as needed and take full responsibility for the content of the manuscript."),
         ("Figure and Image AI Declaration", "No generative AI or AI-assisted tools were used to create or alter figures, images, artwork, or graphical abstracts in the submitted manuscript."),
     ]
@@ -748,7 +748,7 @@ def numeric_traceability_records(root: Path) -> list[dict[str, str]]:
         ("P feature coverage", "248 weeks / 1997 rows / 25 seasons", f"{p_weeks} weeks / {p_rows} rows / {p_seasons} seasons", "data/processed/identification_features_long.csv", "aggregation_regime=P"),
         ("R feature coverage", "14 weeks / 78 rows / 2 seasons", f"{r_weeks} weeks / {r_rows} rows / {r_seasons} seasons", "data/processed/identification_features_long.csv", "aggregation_regime=R"),
         ("R_plus feature coverage", "73 weeks / 702 rows / 7 seasons", f"{rp_weeks} weeks / {rp_rows} rows / {rp_seasons} seasons", "data/processed/identification_features_long.csv", "aggregation_regime=R_plus"),
-        ("P identification results", "247 of 248 weeks", f"{int(p_constraints['feasible'].fillna(False).astype(bool).sum())} of {len(p_constraints)} weeks", "outputs/tables/constraint_summary.csv", "feasible P constraints"),
+        ("P identification results", "247 of 248 weeks", f"{int(p_constraints['feasible'].eq(True).sum())} of {len(p_constraints)} weeks", "outputs/tables/constraint_summary.csv", "feasible P constraints"),
         ("P logged skipped week", "1", str(int(p_constraints["construction_status"].eq("skipped").sum())), "outputs/tables/constraint_summary.csv", "construction_status=skipped"),
         ("P empirical width", "0.843", f"{comparison_value('P', 'mean_normalized_uncertainty'):.3f}", "outputs/tables/identification_comparison_by_regime.csv", "mean normalized width"),
         ("R empirical width", "0.891", f"{comparison_value('R', 'mean_normalized_uncertainty'):.3f}", "outputs/tables/identification_comparison_by_regime.csv", "mean normalized width"),
@@ -849,7 +849,7 @@ def build_documents(root: Path) -> None:
         "- All authors confirmed CRediT roles: yes\n"
         "- All authors approved the final submission package: yes\n"
         "- Code license: MIT\n"
-        "- Data license: CC BY 4.0\n"
+        "- Source-data terms: COMAP academic/research-purpose permission with attribution; see DATA_TERMS.md; no repository relicense\n"
         "- External upload or repository modification: none\n",
     )
     print(f"ANONYMIZED_DOCX = {root / ANON_DOCX}")

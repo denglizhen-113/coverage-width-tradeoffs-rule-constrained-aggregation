@@ -25,7 +25,7 @@ from docx.shared import Inches, Pt
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 PACKAGE = Path("submission_package_stage25")
 TITLE = "Rule-Aware Decision Support for Expert-Crowd Aggregation under Hidden Public Preferences"
-REPOSITORY_URL = "https://github.com/denglizhen-113/rule-aware-dss-expert-crowd"
+REPOSITORY_URL = "https://github.com/denglizhen-113/coverage-width-tradeoffs-rule-constrained-aggregation"
 CORRESPONDING_ADDRESS = (
     "Huazhong University of Science and Technology, 1037 Luoyu Road, "
     "Hongshan District, Wuhan, Hubei 430074, China"
@@ -526,7 +526,7 @@ def build_title_page(output: Path) -> None:
     add_paragraph(document, "Code Availability", size=12, bold=True, keep_with_next=True)
     add_paragraph(document, f"The code used in this study is available in the public GitHub repository: {REPOSITORY_URL}.")
     add_paragraph(document, "Repository Licenses", size=12, bold=True, keep_with_next=True)
-    add_paragraph(document, "Code license: MIT License. Data license: CC BY 4.0.")
+    add_paragraph(document, "Code license: MIT License. Source-data terms: COMAP academic/research-purpose permission with attribution; see DATA_TERMS.md; no repository relicense.")
     add_paragraph(document, "Generative AI Declaration", size=12, bold=True, keep_with_next=True)
     add_paragraph(document, "During the preparation of this work, the authors used ChatGPT and Codex for language polishing, readability review, manuscript consistency checking, and submission-readiness review. The tools were not used to generate research data, experimental results, references, figures, or scientific conclusions. The authors reviewed and edited the content and take full responsibility for it.")
     add_paragraph(document, "Figure Provenance", size=12, bold=True, keep_with_next=True)
@@ -660,7 +660,7 @@ def update_author_records(root: Path) -> None:
 
 Data availability: The data supporting the findings of this study are available in the public GitHub repository: {REPOSITORY_URL}.
 
-Data license: CC BY 4.0.
+Source-data terms: COMAP academic/research-purpose permission with attribution; see DATA_TERMS.md; no repository relicense.
 """
     public_code = f"""# Code Availability Statement
 

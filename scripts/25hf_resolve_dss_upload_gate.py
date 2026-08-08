@@ -20,7 +20,7 @@ from typing import Any
 
 
 TITLE = "Rule-Aware Decision Support for Expert-Crowd Aggregation under Hidden Public Preferences"
-REPOSITORY_URL = "https://github.com/denglizhen-113/rule-aware-dss-expert-crowd"
+REPOSITORY_URL = "https://github.com/denglizhen-113/coverage-width-tradeoffs-rule-constrained-aggregation"
 WUT_ADDRESS = "Wuhan University of Technology, No. 122 Luoshi Road, Hongshan District, Wuhan, Hubei 430070, China"
 HUST_ADDRESS = "Huazhong University of Science and Technology, 1037 Luoyu Road, Hongshan District, Wuhan, Hubei 430074, China"
 
@@ -369,7 +369,7 @@ Complete this checklist in the live Decision Support Systems / Elsevier submissi
 - No AI-generated figures, images, artwork, or graphical abstracts.
 - Data availability: {REPOSITORY_URL}
 - Code availability: {REPOSITORY_URL}
-- Code license: MIT License. Data license: CC BY 4.0.
+- Repository terms: MIT License for code; COMAP academic/research-purpose permission with attribution for source data; see DATA_TERMS.md; no data relicense.
 
 ## Final Human Checks
 
