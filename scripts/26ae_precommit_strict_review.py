@@ -150,8 +150,11 @@ The following author instructions are binding when Stage 26AB is eventually
 run. They do not authorize a journal migration before the remaining external
 gates close.
 
-1. Use `outputs/stage26AD/METHODS_research_draft_STAGE26AD.md` as the source;
-   preserve the frozen X3 file only as a clean-room comparison target.
+1. Use `outputs/stage26AF-1/METHODS_research_draft_STAGE26AF1.md` as the
+   source; preserve the frozen X3 file only as a clean-room comparison target.
+   Do not substitute the superseded Stage 26AD draft: it predates the Stage
+   26AF/26AF-1 figure rebuild, complexity boundary, wording corrections, and
+   Figure 5 conversion.
 2. Do not compress the 178-token/approximately 179-word abstract unless a
    currently accessible official SIMPAT rule proves that it exceeds a limit.
 3. Recheck the recorded single-anonymized policy. If the official page remains
@@ -193,7 +196,7 @@ No item below is represented as approved merely because it appears here.
 
 ## Research draft
 
-- [ ] Approve the title and the 179-word rendered abstract in Stage 26AD.
+- [ ] Approve the title and the 179-word rendered abstract in Stage 26AF-1.
 - [ ] Review the three headline result groups: 180/180 and 0.050289;
   +0.050289/+0.163131; 0/120 versus 14/120.
 - [ ] Accept the explicit limits: one empirical testbed, two registered
@@ -400,7 +403,7 @@ def main(argv: list[str] | None = None) -> int:
     report = f"""# Stage 26AE Precommit Strict Review
 
 Audit date: 2026-08-08
-Scope: current Stage 26AD research draft, all proposed publication-repository
+Scope: current Stage 26AF-1 research draft, all proposed publication-repository
 files, current Git history, and the recorded Stage 26AB instructions.
 
 ## Executive judgment
@@ -448,7 +451,7 @@ yet been run because Stage 26AB has not started.
 2. SIMPAT's current JIF, JCR quartile, CAS year, major category, and zone remain
    unverified in licensed sources. Public secondary signals are not a substitute.
 3. The repository remains uncommitted and private. Public-availability wording
-   in Stage 26AD deliberately uses private tense and must be updated only after
+   in Stage 26AF-1 deliberately uses private tense and must be updated only after
    a verified private push, public transition, anonymous raw-file request, and
    clean clone.
 
@@ -470,10 +473,10 @@ yet been run because Stage 26AB has not started.
    scalability boundary. A SIMPAT editor may still question candidate-count
    growth, LP scaling, permutation enumeration, and posterior acceptance.
    Address this with existing implementation/log evidence only.
-5. Stage 26AD contains the phrase `a real empirical application with hidden
+5. Stage 26AD contained the phrase `a real empirical application with hidden
    truth`. Replace it with `an empirical testbed with latent public preference`
    or equivalent. Elsewhere the manuscript already uses the correct boundary.
-6. The final affiliation/ORCID/CRediT values are not part of Stage 26AD. Stage
+6. The final affiliation/ORCID/CRediT values are not part of Stage 26AF-1. Stage
    26AB must use the recorded school-level addresses, remove `1037 Luoyu Road`,
    and remove Li Bo's obsolete `Supervision` role.
 7. The dated official capture says single-anonymized, but the 2026-08-08 live

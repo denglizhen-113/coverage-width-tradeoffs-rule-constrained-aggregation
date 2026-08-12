@@ -96,12 +96,13 @@ was not reconstructed. See `REPOSITORY_HISTORY_NOTE.md`. The one known Stage 24
 manifest-order discrepancy is documented in `KNOWN_FROZEN_EXCEPTIONS.md` and
 does not alter the frozen package.
 
-The current `manuscript/METHODS_research_draft_STAGE26AF.md` is intentionally
+The current `manuscript/METHODS_research_draft_STAGE26AF1.md` is intentionally
 separate from the byte-locked Stage 26X-3 reference used by
-`verify_reproduction.py`. The former contains later factual, literature,
-figure, wording, and complexity corrections; the latter remains only as the
-historical clean-room comparison target. Stage 26AD is retained as the direct
-source for the reproducible Stage 26AF transformation.
+`verify_reproduction.py`. It contains later factual, literature, figure,
+wording, and complexity corrections; the latter remains only as the historical
+clean-room comparison target. Stage 26AD is retained solely as the source for
+the reproducible Stage 26AF transformation and must not be used as the Stage
+26AB journal-migration source.
 
 ## Historical Submission Generators
 
@@ -109,5 +110,5 @@ Scripts for Stages 25HA-25HF and 26Y are retained to preserve the documented
 DSS/EJOR preparation history. Their templates can contain dated journal,
 repository, anonymity, or release-gate language. They are not current SIMPAT
 submission materials and must not be rerun or quoted as current state without
-a fresh factual audit. The current non-frozen research draft is Stage 26AF;
-the planned journal-format migration is Stage 26AB.
+a fresh factual audit. The current non-frozen research draft is Stage 26AF-1;
+the planned journal-format migration is Stage 26AB and must use that draft.
