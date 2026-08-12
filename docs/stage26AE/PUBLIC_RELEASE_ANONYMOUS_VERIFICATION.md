@@ -1,6 +1,6 @@
 ﻿# Stage 26AF-1 Public Release Verification
 
-Checked at: $time.
+Checked at: 2026-08-12T08:12:37.9716103Z (UTC).
 
 All requests below were performed without authenticated GitHub credentials. Clone disabled Git credential helpers, interactive prompting, and askpass.
 
