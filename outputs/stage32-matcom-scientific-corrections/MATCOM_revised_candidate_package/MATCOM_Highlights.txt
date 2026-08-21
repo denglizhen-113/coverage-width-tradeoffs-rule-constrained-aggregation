@@ -1,0 +1,5 @@
+- Exact MILPs recover sharp ordinal rank endpoints without sampling.
+- Joint-set coverage replaces marginal projection-box coverage.
+- Elimination misspecification trades coverage for identified-set width.
+- Bayesian rectangles and identified sets retain distinct semantics.
+- Season-28 rule uncertainty is reported in a sensitivity analysis.

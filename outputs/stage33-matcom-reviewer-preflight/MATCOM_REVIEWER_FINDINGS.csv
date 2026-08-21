@@ -1,0 +1,10 @@
+id,severity,status,area,evidence,required_action
+F01,P1,PASS,Corrected public release,"Stage 34 independently verified tag matcom-stage32-v1.0.1, commit 4ca87c3381c304ae2f472437bfe21ca51dbc7938, and release SHA-256.",Use the versioned v1.0.1 release; no DOI is asserted.
+F02,P0,EXTERNAL_GATE,Editorial Manager,"Article type, review model, upload slots, metadata confirmation, and portal PDF are unavailable locally.",Record the five portal gates and inspect the generated PDF before submission.
+F03,P1,PASS,Scientific correction,Joint coverage and exact ordinal endpoint corrections are generated from Stage 32 raw evidence.,Use Stage 32 only; do not submit the superseded Stage 31.5 package.
+F04,P1,PASS,Mathematics rendering,Office Math=67; literal TeX=False; Unicode math symbols=True.,Retain generated Stage 32 DOCX and visually check the portal PDF.
+F05,P1,PASS,Author metadata,"Title page, CRediT, manuscript, and cover letter use the same three named authors and plural approval language.",All authors must still reconfirm this metadata in the portal.
+F06,P1,PASS,Package integrity,Manifest has 18 entries for 18 packaged files.,Do not alter package files after this audit; rerun generator if edits are required.
+F07,P2,PASS,References,"In-text citation set=[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]; reference set=[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14].",Keep citation and reference lists synchronized on further revisions.
+F08,P2,PASS,Figure mapping,PDF figures=4; TIFF figures=4; all files exceed 1 KB.,Confirm the authenticated portal's separate-figure and caption upload instructions.
+F09,P2,PASS,Highlights,"Five Highlights detected; lengths=[66, 61, 70, 66, 65].",Upload only if the live portal exposes or encourages a Highlights slot.

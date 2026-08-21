@@ -1,0 +1,4 @@
+rule_provenance_scenario,weeks,mean_exact_normalized_rank_width,mean_direct_R_like_exact_normalized_rank_width,mean_weak_minus_direct_exact_width
+primary_seasons_28_34,73,0.927551006832,0.870841506287,0.0567095005451
+exclude_ambiguous_season_28,62,0.926487289592,0.87450951826,0.0519777713326
+season_28_only,11,0.933546504001,0.850167256985,0.0833792470156
